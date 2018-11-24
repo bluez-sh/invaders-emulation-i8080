@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/invaders_emulation.dir/main.c.o CMakeFiles/invaders_emulation.dir/inv_machine.c.o CMakeFiles/invaders_emulation.dir/intel8080_emulator.c.o  -o invaders_emulation -lSDL2 

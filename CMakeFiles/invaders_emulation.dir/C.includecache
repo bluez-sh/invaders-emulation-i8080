@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/bluez/Code/invaders-emulation/intel8080_emulator.h
+stdlib.h
+-
+stdio.h
+-
+stdint.h
+-
+assert.h
+-
+
+/home/bluez/Code/invaders-emulation/inv_machine.h
+intel8080_emulator.h
+/home/bluez/Code/invaders-emulation/intel8080_emulator.h
+
+/home/bluez/Code/invaders-emulation/main.c
+stdio.h
+-
+SDL2/SDL.h
+-
+SDL2/SDL_timer.h
+-
+SDL2/SDL_events.h
+-
+inv_machine.h
+/home/bluez/Code/invaders-emulation/inv_machine.h
+

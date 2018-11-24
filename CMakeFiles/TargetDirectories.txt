@@ -1,0 +1,3 @@
+/home/bluez/Code/invaders-emulation/CMakeFiles/rebuild_cache.dir
+/home/bluez/Code/invaders-emulation/CMakeFiles/invaders_emulation.dir
+/home/bluez/Code/invaders-emulation/CMakeFiles/edit_cache.dir
