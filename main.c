@@ -86,7 +86,7 @@ void main_loop() {
 }
 
 int main() {
-	
+
 	if(SDL_Init(SDL_INIT_VIDEO | SDL_INIT_TIMER) != 0) {
 		printf("Error initializing SDL: %s", SDL_GetError());
 		exit(1);
@@ -115,7 +115,7 @@ int main() {
 	SDL_RendererInfo r_info;
 	SDL_GetRendererInfo(rend, &r_info);
 	printf("Using renderer: %s\n", r_info.name);
-	
+
 	tex = SDL_CreateTexture(rend,
 			SDL_PIXELFORMAT_RGBA32,
 			SDL_TEXTUREACCESS_STREAMING,
@@ -129,7 +129,7 @@ int main() {
 		exit(1);
 	}
 
-	
+
 	mac = init_machine();		
 
 	SDL_UpdateTexture(tex, NULL, mac->screen_buffer, 4 * SCREEN_WIDTH);
@@ -139,12 +139,12 @@ int main() {
 	while(!to_exit) {
 		main_loop();			
 	}
-	
+
 	free(mac->state->memory);
 	free(mac->state);
 	free(mac->screen_buffer);
 	free(mac);
-			
+
 	SDL_DestroyTexture(tex);
 	SDL_DestroyRenderer(rend);
 	SDL_DestroyWindow(wind);

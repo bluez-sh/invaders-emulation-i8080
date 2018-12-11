@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/bluez/Code/invaders-emulation/intel8080_emulator.c
+intel8080_emulator.h
+/home/bluez/Code/invaders-emulation/intel8080_emulator.h
+string.h
+-
+
 /home/bluez/Code/invaders-emulation/intel8080_emulator.h
 stdlib.h
 -
@@ -14,6 +20,14 @@ stdio.h
 stdint.h
 -
 assert.h
+-
+
+/home/bluez/Code/invaders-emulation/inv_machine.c
+inv_machine.h
+/home/bluez/Code/invaders-emulation/inv_machine.h
+sys/time.h
+-
+string.h
 -
 
 /home/bluez/Code/invaders-emulation/inv_machine.h

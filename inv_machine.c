@@ -26,19 +26,19 @@ void read_file_into_memory_at(State8080* state, const char* filename, uint32_t o
 
 	FILE *file = fopen(filename, "rb");
 
-    if(file == NULL) {
-        printf("Error: Cannot open %s!\n", filename);
-        exit(1);
-    }
+	if(file == NULL) {
+		printf("Error: Cannot open %s!\n", filename);
+		exit(1);
+	}
 
-    fseek(file, 0L, SEEK_END);
-    long fsize = ftell(file);
-    fseek(file, 0L, SEEK_SET);
+	fseek(file, 0L, SEEK_END);
+	long fsize = ftell(file);
+	fseek(file, 0L, SEEK_SET);
 
-    unsigned char *buffer = &state->memory[offset];
+	unsigned char *buffer = &state->memory[offset];
 
-    fread(buffer, fsize, 1, file);
-    fclose(file);
+	fread(buffer, fsize, 1, file);
+	fclose(file);
 }
 
 void* frame_buffer(State8080* state) {
@@ -52,7 +52,7 @@ void load_screen_buffer(machine* mac) {
 		int j = (cnt * 8) % 256;
 
 		uint8_t *byte = (uint8_t*) frame_buffer(mac->state) + cnt;
-		
+
 		int j_base = j;	
 		unsigned int *pix;
 		int bit;	
@@ -89,13 +89,13 @@ uint8_t machine_in(machine* mac, uint8_t port) {
 			a = mac->port2;
 			break;
 		case 3: {
-			uint16_t temp = (mac->shift1 << 8) | mac->shift0;
-			a = (temp >> (8 - mac->shift_offset)) & 0xff;
-			break;
-		}
+					uint16_t temp = (mac->shift1 << 8) | mac->shift0;
+					a = (temp >> (8 - mac->shift_offset)) & 0xff;
+					break;
+				}
 		default:
-			printf("/nUnknown in-port: %d/n", port);
-			exit(1);
+				printf("/nUnknown in-port: %d/n", port);
+				exit(1);
 	}
 	return a;
 }
@@ -111,8 +111,8 @@ void machine_out(machine* mac, uint8_t port, uint8_t value) {
 		case 5: break;
 		case 6: break;
 		default:
-			printf("/nUnknown out-port: %d/n", port);
-			exit(1);
+				printf("/nUnknown out-port: %d/n", port);
+				exit(1);
 	}
 }
 
@@ -169,7 +169,7 @@ void run_cpu(machine* mac) {
 	double time_elapsed = now - mac->last_timer;
 	int cycles_to_run = 2 * time_elapsed;		//for 2MHz => 2 cycles per microsec	
 	int cycles_done = 0;
-	
+
 	while(cycles_to_run > cycles_done) {
 		unsigned char *opcode = &mac->state->memory[mac->state->pc];	
 

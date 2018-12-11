@@ -7,21 +7,21 @@
 #include <assert.h>
 
 struct ConditionCodes {
-    uint8_t z:1;
-    uint8_t s:1;
-    uint8_t p:1;
-    uint8_t cy:1;
-    uint8_t ac:1;
-    uint8_t pad:3;
+	uint8_t z:1;
+	uint8_t s:1;
+	uint8_t p:1;
+	uint8_t cy:1;
+	uint8_t ac:1;
+	uint8_t pad:3;
 };
 
 typedef struct State8080 {
-    uint8_t a, b, c, d, e, h, l;
-    uint16_t sp, pc;
-    uint8_t *memory;
-    uint8_t int_enable;
+	uint8_t a, b, c, d, e, h, l;
+	uint16_t sp, pc;
+	uint8_t *memory;
+	uint8_t int_enable;
 	uint8_t cycles;
-    struct ConditionCodes flags;
+	struct ConditionCodes flags;
 } State8080;
 
 State8080* init_8080(void);
